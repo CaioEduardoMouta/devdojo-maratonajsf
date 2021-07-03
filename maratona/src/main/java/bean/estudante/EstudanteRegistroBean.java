@@ -1,16 +1,25 @@
-package br.com.devdojo.maratonajsf.model;
+package bean.estudante;
 
-import br.com.devdojo.maratonajsf.model.enums.Turno;
+import java.io.Serializable;
 
 
-public class Estudante {
-	
+import javax.inject.Named;
+import java.io.Serializable;
+
+
+@Named("EstudanteRegistro")
+public class EstudanteRegistroBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nome = "Caio";
 	private String sobrenome = "Mouta";
 	private double nota1;
 	private double nota2;
 	private double nota3 = 10;
-	private Turno turno = Turno.MATUTINO;
+
 	
 	public String getNome() {
 		return nome;
@@ -42,4 +51,5 @@ public class Estudante {
 	public void setNota3(double nota3) {
 		this.nota3 = nota3;
 	}
+	
 }
