@@ -29,7 +29,7 @@
     
 	 <h:outputText value="ENUM"/><br/>
    	 <h:outputLabel value="#{estudanteRegistroBean.estudante.turno}"/><br/>
-   	 <h:outputLabel value="#{estudanteRegistroBean.estudante.turno.equals(Turno.MATUTINO)}"/><br/>
+   	 <h:outputLabel value="${estudanteRegistroBean.estudante.turno.equals(Turno.MATUTINO)}"/><br/>
 	<!-- Arrays  -->
 	<h:outputLabel value="#{estudanteRegistroBean.nomeArray[0]}
 	#{estudanteRegistroBean.nomeArray[1]} #{estudanteRegistroBean.nomeArray[2]}"/><br />
@@ -50,5 +50,7 @@
 	<ui:repeat value="#{estudanteRegistroBean.nomeSet}" var="nome">
 			<h:outputLabel value="#{nome}"/><br/>
 	</ui:repeat>
+	
+	
 </h:body>
 </html>
