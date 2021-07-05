@@ -1,19 +1,19 @@
 package br.com.devdojo.maratonajsf.bean.estudante;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import br.com.devdojo.maratonajsf.model.Estudante;
 
 import java.io.Serializable;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
 
 @Named
@@ -78,6 +78,8 @@ public class EstudanteRegistroBean implements Serializable {
 	public void esconderLink() {
 		this.mostrarLink = false;
 	}
+	
+
 
 	
 	public boolean isMostrarNota() {
