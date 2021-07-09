@@ -1,4 +1,4 @@
-package br.com.devdojo.maratonajsf.bean.session;
+package br.com.devdojo.maratonajsf.bean.view;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,26 +7,25 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 @Named
-@SessionScoped
-//Session Scoped vai continuar mostrando até a janela do navegador não ser fechada
-//O ciclo de vida proposto por esse escopo se inicia no momento 
-//em que a primeira requisição para a instância de um Managed Bean
-//com este escopo for realizada, e termina no momento em que a sessão 
-//do cliente for finalizada;
-public class TesteSessionBean implements Serializable  {
+@ViewScoped
+//As instâncias de um Managed Bean anotado com esse escopo
+//iniciam quando houver uma requisição a determinada página
+//e permanecem disponíveis enquanto houver requisições para
+//esta mesma página, sendo finalizados quando ocorrer o 
+//redirecionamento para outra página;
+public class TesteViewBean implements Serializable  {
 	
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
 	@PostConstruct
 	public void init() {
-		System.out.println("Entrou no PostConstruct do SessionScoped");
-		 personagens = Arrays.asList("Monster","Red Bull","Reign");
+		System.out.println("Entrou no PostConstruct do ViewScoped");
+		 personagens = Arrays.asList("Chile","Argentina","Uruguai");
 	}
 	
 	public void selecionaPersonagem() {
@@ -34,10 +33,7 @@ public class TesteSessionBean implements Serializable  {
 		String personagem = personagens.get(index);
 		personagemSelecionado.add(personagem);
 	}
-	public String logout() {
-		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		return "session?faces-redirect=true";
-	}
+	
 
 	public List<String> getPersonagemSelecionado() {
 		return personagemSelecionado;

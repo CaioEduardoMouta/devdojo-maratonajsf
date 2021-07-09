@@ -11,18 +11,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
 </h:head>
+<f:metadata>
+	<f:viewAction action="#{testeConversationBean.init}"/>
+</f:metadata>
 <h:body>
 	<h:form>
 		<h:outputText value="#{testeApplicationBean.categoriaList}"/><br/>
-		<h:outputText value="#{testeRequestBean.personagemSelecionado}"/><br/>
-		<h:commandButton actionListener="#{testeRequestBean.selecionaPersonagem()}"
+		<h:outputText value="#{testeConversationBean.personagemSelecionado}"/><br/>
+		<h:commandButton actionListener="#{testeConversationBean.selecionaPersonagem()}"
 						value="Selecionar Personagem" />
-		<h:commandButton actionListener="#{testeRequestBean.selecionaPersonagem()}"
-						value="Selecionar Personagem Forward" action="index2" />
-		<h:commandButton actionListener="#{testeRequestBean.selecionaPersonagem()}"
-						value="Selecionar Personagem Forward" action="index2?faces-redirect=true"/>
-		<h:commandButton actionListener="#{testeApplicationBean.mudarLista()}"
-						value="Mudar List Application Bean" />
+		<h:commandButton actionListener="#{testeConversationBean.selecionaPersonagem()}"
+						value="Selecionar Personagem Forward" action="conversation2" />
+		<h:commandButton actionListener="#{testeConversationBean.selecionaPersonagem()}"
+						value="Selecionar Personagem Forward" action="convesation2?faces-redirect=true"/>
+	
+		<h:commandButton action="#{testeConversationBean.endConversation()}"
+						value="Finalizar Conversation Scoped" />
 	</h:form>
 </h:body>
 </html>

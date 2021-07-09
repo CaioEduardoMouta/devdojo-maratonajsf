@@ -12,6 +12,8 @@ import javax.inject.Named;
 
 @Named
 @RequestScoped
+//Nesse escopo, o ciclo de vida começa quando uma requisição
+//é iniciada e permanece disponível durante o tempo de execução dela;
 public class TesteRequestBean implements Serializable{
 	
 	/**
