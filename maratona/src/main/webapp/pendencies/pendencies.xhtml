@@ -10,19 +10,18 @@
 <!-- Além do Primafaces para deixar o visual mais agradavel tem o ICEfaces e
 RichFaces  -->
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 <title>Insert title here</title>
 </h:head>
 <h:body>
 <h:form>
-	<h2>Segunda pagina de registro FlowScopped</h2>
+<p:messages autoUpdate="true"/>
+	<h2>Validando dados do usuario</h2>
 	<h:panelGrid columns="2">
-		<h:outputLabel value="Endereco"/>
-		<h:inputText value="#{testeFlowBean.endereco}"/>
-		<h:commandButton value="Back" action="registration1?faces-redirect=true"/>
-		<h:commandButton value="Next" action="registration3?faces-redirect=true"/>
-		<h:commandButton value="Validar Pendencias" action="callPendencies"/>
+		<h:outputLabel value="#{testeFlowNestedBean.userName}"/>
+		<h:outputLabel value="#{testeFlowNestedBean.userSurname}"/>
+		<h:commandButton action="#{testeFlowNestedBean.validarUser}"/>
+		<h:commandButton value="Voltar ao inicio" action="exitToInicio"/>
 	</h:panelGrid>
 </h:form>
 </h:body>
-</html>
