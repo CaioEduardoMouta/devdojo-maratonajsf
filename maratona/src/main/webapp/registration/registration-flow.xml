@@ -30,7 +30,7 @@
             </case>
             <default-outcome>registrationInicio</default-outcome>
         </switch>
-       // 
+       
         <flow-return id="exitToInicio">
             <from-outcome>/inicioflow.xhtml</from-outcome>
         </flow-return>
