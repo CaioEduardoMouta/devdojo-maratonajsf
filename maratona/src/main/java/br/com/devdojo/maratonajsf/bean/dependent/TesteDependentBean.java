@@ -1,4 +1,4 @@
-package br.com.devdojo.maratonajsf.bean.view;
+package br.com.devdojo.maratonajsf.bean.dependent;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,25 +7,23 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.PostConstruct;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.Dependent;
 import javax.inject.Named;
 
 @Named
-@ViewScoped
-//As instâncias de um Managed Bean anotado com esse escopo
-//iniciam quando houver uma requisição a determinada página
-//e permanecem disponíveis enquanto houver requisições para
-//esta mesma página, sendo finalizados quando ocorrer o 
-//redirecionamento para outra página;
-public class TesteViewBean implements Serializable  {
-	
+@Dependent
+public class TesteDependentBean implements Serializable {
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
-	private final TesteDependentBean 
+	
 	@PostConstruct
 	public void init() {
-		System.out.println("Entrou no PostConstruct do ViewScoped");
+		System.out.println("Entrou no PostConstruct do @Dependent");
 		 personagens = Arrays.asList("Chile","Argentina","Uruguai");
 	}
 	
@@ -43,4 +41,5 @@ public class TesteViewBean implements Serializable  {
 	public void setPersonagemSelecionado(List<String> personagemSelecionado) {
 		this.personagemSelecionado = personagemSelecionado;
 	}
+
 }

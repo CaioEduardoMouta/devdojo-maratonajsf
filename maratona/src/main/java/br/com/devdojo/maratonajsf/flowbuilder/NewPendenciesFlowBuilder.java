@@ -19,9 +19,10 @@ public class NewPendenciesFlowBuilder implements Serializable {
 		flowBuilder.viewNode(flowId,"/newpendencies/newpendencies.xhtml").markAsStartNode();
 		flowBuilder.returnNode("proocedToNewRegistration3")
 					.fromOutcome("/newregistration/newregistration3.xhtml");
-		flowBuilder.returnNode("proocedToNewRegistration3")
-				   .fromOutcome("/newregistration/newregistration3.xhtml");
-		
-		return null;
+		flowBuilder.returnNode("exitToNewInicio")
+				   .fromOutcome("/newregistration/newregistration.xhtml");
+		flowBuilder.inboundParameter( "userName", "#{testeFlowBuilderNestedBean.userName}");		
+		flowBuilder.inboundParameter("userSurname", "#{testeFlowBuilderNestedBean.userSurname}");	
+		return flowBuilder.getFlow();
 	}
 }
