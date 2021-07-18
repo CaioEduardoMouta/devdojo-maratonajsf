@@ -7,19 +7,22 @@
 	  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
 	  xmlns:f="http://java.sun.com/jsf/core" 
 >
-<h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
-</h:head>
+
 <h:body>
 	<h:form>
 		<h:outputText value="#{testeApplicationBean.categoriaList}"/><br/>
+		<!--<h:outputText value="#{testeApplicationBean.dependentBean.categoriasList}"/><br/> -->
+		
 		<h:outputText value="#{testeViewBean.personagemSelecionado}"/><br/>
-		<h:outputText value=" Dependent: #{testeViewBean.dependentBean.personagemSelecionado}"/><br/>
+	
+		<!-- <h:outputText value=" Dependent: #{testeViewBean.dependentBean.personagemSelecionado}"/><br/> -->
+		
 		<h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}"
 						value="Selecionar Personagem" />
+						
 		<h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}"
 						value="Selecionar Personagem Forward" action="view2" />
+						
 		<h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}"
 						value="Selecionar Personagem Forward" action="view2?faces-redirect=true"/>
 	</h:form>	

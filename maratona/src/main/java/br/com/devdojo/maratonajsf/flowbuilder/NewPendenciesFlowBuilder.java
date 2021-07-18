@@ -11,6 +11,11 @@ import javax.faces.flow.builder.FlowDefinition;
 public class NewPendenciesFlowBuilder implements Serializable {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Produces
 	@FlowDefinition
 	public Flow defineFlow(@FlowBuilderParameter FlowBuilder flowBuilder) {

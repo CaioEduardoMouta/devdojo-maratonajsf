@@ -17,12 +17,14 @@ public class TesteDependentBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
-
+	private List<String> categoriasList = new ArrayList<>();
+	
 	
 	@PostConstruct
 	public void init() {
 		System.out.println("Entrou no PostConstruct do @Dependent");
 		 personagens = Arrays.asList("Chile","Argentina","Uruguai");
+		 
 	}
 	
 	public void selecionaPersonagem() {
@@ -38,6 +40,14 @@ public class TesteDependentBean implements Serializable {
 
 	public void setPersonagemSelecionado(List<String> personagemSelecionado) {
 		this.personagemSelecionado = personagemSelecionado;
+	}
+
+	public List<String> getCategoriasList() {
+		return categoriasList;
+	}
+
+	public void setCategoriasList(List<String> categoriasList) {
+		this.categoriasList = categoriasList;
 	}
 
 

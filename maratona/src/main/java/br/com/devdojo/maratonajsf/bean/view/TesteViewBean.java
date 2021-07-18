@@ -8,10 +8,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
+//import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.devdojo.maratonajsf.bean.dependent.TesteDependentBean;
+//Não funciona o dependent bean aqui o server não roda 
+//import br.com.devdojo.maratonajsf.bean.dependent.TesteDependentBean;
 
 @Named
 @ViewScoped
@@ -25,6 +26,12 @@ public class TesteViewBean implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
+//	private final TesteDependentBean dependentBean;
+	
+//	@Inject
+//	public TesteViewBean(TesteDependentBean dependentBean) {
+//		this.dependentBean = dependentBean;
+//	}
 
 	
 	@PostConstruct
@@ -37,12 +44,13 @@ public class TesteViewBean implements Serializable  {
 		int index = ThreadLocalRandom.current().nextInt(3);
 		String personagem = personagens.get(index);
 		personagemSelecionado.add(personagem);
-		dependentBean.getPersonagemSelecionado().add(personagem);
+//		dependentBean.getPersonagemSelecionado().add(personagem);
+		
 	}
 	
-	public TesteDependentBean getDependentBean() {
-		return dependentBean;
-	}
+//	public TesteDependentBean getDependentBean() {
+//		return dependentBean;
+//	}
 	
 
 	public List<String> getPersonagemSelecionado() {

@@ -1,6 +1,7 @@
 package br.com.devdojo.maratonajsf.bean.application;
 
 import java.io.Serializable;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
 
 import br.com.devdojo.maratonajsf.bean.dependent.TesteDependentBean;
 
@@ -19,15 +21,18 @@ public class TesteApplicationBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private List<String> categoriaList;
-
-	
-
-	
+//	private final TesteDependentBean dependentBean;
+//
+//	@Inject
+//	public TesteApplicationBean(TesteDependentBean dependentBean) {
+//		this.dependentBean = dependentBean;
+//	}
 	
 	@PostConstruct
 	public void init() {
 		System.out.println("Entrou no PostConstruct do ApplicationScopped");
 		categoriaList = Arrays.asList("Far Cry","God of War","Watch Dogs");
+//		dependentBean.getCategoriasList().addAll(Arrays.asList("Skyrim","Mass Effect","Fallout"));
 		
 	}
 	
@@ -35,6 +40,10 @@ public class TesteApplicationBean implements Serializable{
 		categoriaList = Arrays.asList("Far Cry","God of War","Watch Dogs","Max Payne");
 	}
 
+//	public TesteDependentBean getDependentBean() {
+//		return dependentBean;
+//	}
+	
 	public List<String> getCategoriaList() {
 		return categoriaList;
 	}
