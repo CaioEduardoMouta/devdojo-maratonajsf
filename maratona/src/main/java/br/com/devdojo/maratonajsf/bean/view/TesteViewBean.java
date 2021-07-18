@@ -25,12 +25,7 @@ public class TesteViewBean implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
-	private final TesteDependentBean dependentBean;
-	
-	@Inject
-	public TesteViewBean(TesteDependentBean dependentBean) {
-		this.dependentBean = dependentBean;
-	}
+
 	
 	@PostConstruct
 	public void init() {

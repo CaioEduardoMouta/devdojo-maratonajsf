@@ -14,14 +14,19 @@
 <h:body>
 	<h:form>
 		<h:outputText value="#{testeApplicationBean.categoriaList}"/><br/>
-		<h:outputText value="#{testeViewBean.personagemSelecionado}"/><br/>
-		<h:outputText value=" Dependent: #{testeViewBean.dependentBean.personagemSelecionado}"/><br/>
-		<h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}"
+		
+		<h:outputText value="#{testeDependentBean.personagemSelecionado}"/><br/>
+		
+		
+		
+		<h:commandButton actionListener="#{testeDependentBean.selecionaPersonagem()}"
 						value="Selecionar Personagem" />
-		<h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}"
-						value="Selecionar Personagem Forward" action="view2" />
-		<h:commandButton actionListener="#{testeViewBean.selecionaPersonagem()}"
-						value="Selecionar Personagem Forward" action="view2?faces-redirect=true"/>
+						
+		<h:commandButton actionListener="#{testeDepedentBean.selecionaPersonagem()}"
+						value="Selecionar Personagem Forward" action="dependent2" />
+						
+		<h:commandButton actionListener="#{testeDepedentBean.selecionaPersonagem()}"
+						value="Selecionar Personagem Forward" action="dependent2?faces-redirect=true"/>
 	</h:form>	
 </h:body>
 </html>

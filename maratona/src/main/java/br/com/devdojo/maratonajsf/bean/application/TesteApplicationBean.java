@@ -19,12 +19,9 @@ public class TesteApplicationBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private List<String> categoriaList;
-	private final TesteDependentBean dependentBean;
+
 	
-	@Inject
-	public TesteApplicationBean(TesteDependentBean dependentBean) {
-		this.dependentBean = dependentBean;
-	}
+
 	
 	
 	@PostConstruct

@@ -17,7 +17,7 @@ public class TesteDependentBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
-	private List<String> categoriaList = new ArrayList<>();
+
 	
 	@PostConstruct
 	public void init() {
@@ -40,12 +40,6 @@ public class TesteDependentBean implements Serializable {
 		this.personagemSelecionado = personagemSelecionado;
 	}
 
-	public List<String> getCategoriaList() {
-		return categoriaList;
-	}
 
-	public void setCategoriaList(List<String> categoriaList) {
-		this.categoriaList = categoriaList;
-	}
 
 }
