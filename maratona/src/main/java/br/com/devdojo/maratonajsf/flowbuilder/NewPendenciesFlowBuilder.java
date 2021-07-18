@@ -21,8 +21,8 @@ public class NewPendenciesFlowBuilder implements Serializable {
 					.fromOutcome("/newregistration/newregistration3.xhtml");
 		flowBuilder.returnNode("exitToNewInicio")
 				   .fromOutcome("/newregistration/newregistration.xhtml");
-		flowBuilder.inboundParameter( "userName", "#{testeFlowBuilderNestedBean.userName}");		
-		flowBuilder.inboundParameter("userSurname", "#{testeFlowBuilderNestedBean.userSurname}");	
+		//flowBuilder.inboundParameter( "userName", "#{testeFlowBuilderNestedBean.userName}");		
+		//flowBuilder.inboundParameter("userSurname", "#{testeFlowBuilderNestedBean.userSurname}");	
 		return flowBuilder.getFlow();
 	}
 }
