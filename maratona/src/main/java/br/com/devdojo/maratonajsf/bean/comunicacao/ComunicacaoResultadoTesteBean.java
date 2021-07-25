@@ -8,23 +8,16 @@ import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class ComunicacaoTeste1Bean implements Serializable {
+public class ComunicacaoResultadoTesteBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String sobrenome;
 	
-	public void imprimirAtributos() {
-		String initParameter = FacesContext.getCurrentInstance()
-			.getExternalContext()
-			.getInitParameter("images.location");
-		System.out.println(initParameter);
-	}
-	
-	public String save() {
+	public void init() {
+		System.out.println("Criou Comunicação Resultado");
 		System.out.println(nome);
 		System.out.println(sobrenome);
-		return "comunicacao2?faces-redirect=true&nome="+nome+"&sobrenome="+sobrenome;
 	}
 
 	public String getNome() {

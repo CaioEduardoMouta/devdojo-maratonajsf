@@ -20,7 +20,18 @@
 		<h:panelGrid columns="1">
 			<h:inputText value="#{comunicacaoTeste1Bean.nome}"/>
 			<h:inputText value="#{comunicacaoTeste1Bean.sobrenome}"/>
-			<p:commandButton value="save" action="#{comunicacaoTeste1Bean.save()}" />
+			<p:button value="Save" outcome="comunicacao2?faces-redirect=true">
+				<f:param name="nome" value="DevDojo"/>
+				<f:param name="sobrenome" value="Ninjas"/>
+			</p:button>
+			<h:link value="vai para comunicao 2" outcome="comunicacao2">
+				<f:param name="nome" value="Axalta"/>
+				<f:param name="sobrenome" value="3M"/>
+			</h:link>
+			<h:link value="vai para comunicao 3" outcome="comunicacao3">
+				<f:param name="nome" value="SQLite"/>
+				<f:param name="sobrenome" value="Redis"/>
+			</h:link>
 		</h:panelGrid>
 	</h:form>
 </h:body>

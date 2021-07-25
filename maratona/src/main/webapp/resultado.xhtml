@@ -7,14 +7,17 @@
 	  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
 	  xmlns:f="http://java.sun.com/jsf/core" 
 >
+<f:metadata>
+		<f:viewParam name="nome" value="#{comunicacaoTeste3Bean.nome}"/>
+		<f:viewParam name="sobrenome" value="#{comunicacaoTeste3Bean.sobrenome}"/>
+		<f:event  type="preRenderView" listener="#{comunicacaoTeste3Bean.init}"/>
+</f:metadata>
 
 <h:body>
-	
 	<h:form>
 		<h:panelGrid columns="1">
-			<h:inputText value="#{comunicacaoTeste2Bean.nome}"/>
-			<h:inputText value="#{comunicacaoTeste2Bean.sobrenome}"/>
-			
+			<h:outputLabel value="#{comunicacaoTeste3Bean.nome}"/>
+			<h:outputLabel value="#{comunicacaoTeste3Bean.sobrenome}"/>
 		</h:panelGrid>
 	</h:form>
 </h:body>
