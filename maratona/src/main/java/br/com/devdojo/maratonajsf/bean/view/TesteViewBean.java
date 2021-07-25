@@ -8,8 +8,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 //import javax.inject.Inject;
 import javax.inject.Named;
+
+import br.com.devdojo.maratonajsf.bean.dependent.TesteDependentBean;
+import br.com.devdojo.maratonajsf.bean.session.TesteSessionBean;
 
 //Não funciona o dependent bean aqui o server não roda 
 //import br.com.devdojo.maratonajsf.bean.dependent.TesteDependentBean;
@@ -26,12 +30,14 @@ public class TesteViewBean implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
-//	private final TesteDependentBean dependentBean;
+	private final TesteSessionBean sessionBean;
+	private final TesteDependentBean dependentBean;
 	
-//	@Inject
-//	public TesteViewBean(TesteDependentBean dependentBean) {
-//		this.dependentBean = dependentBean;
-//	}
+	@Inject
+	public TesteViewBean(TesteDependentBean dependentBean, TesteSessionBean sessionBean) {
+		this.dependentBean = dependentBean;
+		this.sessionBean = sessionBean;
+}
 
 	
 	@PostConstruct
@@ -41,16 +47,26 @@ public class TesteViewBean implements Serializable  {
 	}
 	
 	public void selecionaPersonagem() {
-		int index = ThreadLocalRandom.current().nextInt(3);
-		String personagem = personagens.get(index);
-		personagemSelecionado.add(personagem);
-//		dependentBean.getPersonagemSelecionado().add(personagem);
+		System.out.println(sessionBean.getEstudante().getNome());
+		if(sessionBean.getEstudante().getNome().equals("Caio")) {
+			int index = ThreadLocalRandom.current().nextInt(3);
+			String personagem = personagens.get(index);
+			personagemSelecionado.add(personagem);
+			dependentBean.getPersonagemSelecionado().add(personagem);
+		}
 		
 	}
+	public List<String> getPersonagens() {
+		return personagens;
+	}
 	
-//	public TesteDependentBean getDependentBean() {
-//		return dependentBean;
-//	}
+    public void setPersonagens(List<String> personagens) {
+		this.personagens = personagens;
+	}
+	
+	public TesteDependentBean getDependentBean() {
+		return dependentBean;
+	}
 	
 
 	public List<String> getPersonagemSelecionado() {

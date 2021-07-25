@@ -11,6 +11,8 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import br.com.devdojo.maratonajsf.model.Estudante;
+
 @Named
 @SessionScoped
 //Session Scoped vai continuar mostrando até a janela do navegador não ser fechada
@@ -23,10 +25,17 @@ public class TesteSessionBean implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	private List<String> personagens;
 	private List<String> personagemSelecionado = new ArrayList<>();
+	private Estudante estudante;
+	
 	@PostConstruct
 	public void init() {
 		System.out.println("Entrou no PostConstruct do SessionScoped");
 		 personagens = Arrays.asList("Monster","Red Bull","Reign");
+		 logar();
+	}
+	
+	public void logar() {
+		estudante = new Estudante();
 	}
 	
 	public void selecionaPersonagem() {
@@ -37,6 +46,14 @@ public class TesteSessionBean implements Serializable  {
 	public String logout() {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 		return "session?faces-redirect=true";
+	}
+	
+	public Estudante getEstudante() {
+		return estudante;
+	}
+	
+	public void setEstudante(Estudante estudante) {
+		this.estudante = estudante;
 	}
 
 	public List<String> getPersonagemSelecionado() {
