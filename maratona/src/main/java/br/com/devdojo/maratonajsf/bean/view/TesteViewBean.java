@@ -9,7 +9,6 @@ import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
-//import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.devdojo.maratonajsf.bean.dependent.TesteDependentBean;

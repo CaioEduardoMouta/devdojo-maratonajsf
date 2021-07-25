@@ -22,11 +22,12 @@ public class TesteApplicationBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private List<String> categoriaList;
-//	private final TesteDependentBean dependentBean;
+	private final TesteDependentBean dependentBean;
 	private final TesteSessionBean sessionBean;
 //
 @Inject
-public TesteApplicationBean(TesteSessionBean sessionBean) {
+public TesteApplicationBean(TesteDependentBean dependentBean,TesteSessionBean sessionBean) {
+		this.dependentBean = dependentBean;	
 		this.sessionBean = sessionBean;
 	}
 	
