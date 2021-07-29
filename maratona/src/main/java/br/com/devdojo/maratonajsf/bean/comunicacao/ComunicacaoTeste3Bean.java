@@ -21,12 +21,15 @@ public class ComunicacaoTeste3Bean implements Serializable{
 	
 	private String nome;
 	private String sobrenome;
-
+	private String data;
 	
 	public void init() {
-		System.out.println("Criou comunicação 3");
-		System.out.println(nome);
-		System.out.println(sobrenome);
+		if(!FacesContext.getCurrentInstance().isPostback()) {
+			System.out.println("Criou comunicação 3");
+			System.out.println(nome);
+			System.out.println(sobrenome);
+			new SimpleDateFormat
+		}
 	}
 	public String save() {
 		System.out.println("Salvando");
@@ -44,6 +47,12 @@ public class ComunicacaoTeste3Bean implements Serializable{
 	}
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
 	}
 	
 	
