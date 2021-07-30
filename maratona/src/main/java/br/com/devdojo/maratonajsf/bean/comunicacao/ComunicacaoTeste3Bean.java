@@ -1,15 +1,12 @@
 package br.com.devdojo.maratonajsf.bean.comunicacao;
 
 import java.io.Serializable;
-import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import javax.faces.context.FacesContext;
+import java.util.Date;
+
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
-
-import org.omnifaces.cdi.Param;
+import java.text.ParseException;
 
 
 @Named
@@ -21,15 +18,16 @@ public class ComunicacaoTeste3Bean implements Serializable{
 	
 	private String nome;
 	private String sobrenome;
-	private String data;
+	private Date data;
 	
-	public void init() {
-		if(!FacesContext.getCurrentInstance().isPostback()) {
+	
+	public void init() throws ParseException {
+	//	if(!FacesContext.getCurrentInstance().isPostback()) {
 			System.out.println("Criou comunicação 3");
 			System.out.println(nome);
 			System.out.println(sobrenome);
-			new SimpleDateFormat
-		}
+			
+		//}
 	}
 	public String save() {
 		System.out.println("Salvando");
@@ -48,12 +46,13 @@ public class ComunicacaoTeste3Bean implements Serializable{
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
+
 	
 	
 	

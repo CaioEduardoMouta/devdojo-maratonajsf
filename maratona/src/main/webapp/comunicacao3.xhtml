@@ -5,14 +5,17 @@
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-	  xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:of="http://omnifaces.org/functions" 
 	  xmlns:o="http://omnifaces.org/ui"
 >
 <f:metadata>
 		<f:viewParam name="nome" value="#{comunicacaoTeste3Bean.nome}"/>
 		<f:viewParam name="sobrenome" value="#{comunicacaoTeste3Bean.sobrenome}"/>
-		<f:viewParam name="data" value="#{comunicacaoTeste3Bean.data}"/>
-		<!-- <f:event  type="preRenderView" listener="#{comunicacaoTeste3Bean.init}"/> -->
+		<f:viewParam name="data" value="#{comunicacaoTeste3Bean.data}">
+			<f:convertDateTime pattern="dd-MM-yyyy"/>
+		</f:viewParam>
+		
 		<f:viewAction action="#{comunicacaoTeste3Bean.init}"/>
 </f:metadata>
 
@@ -25,7 +28,7 @@
 				<f:ajax event="blur"/>
 			</h:inputText>
 			<h:inputText value="#{comunicacaoTeste3Bean.sobrenome}"/>
-			<h:outputLabel value="#{comunicacaoTeste3Bean.data}"/>
+			<h:outputLabel value="#{comunicacaoTeste3Bean.data2}"/>
 			<h:commandButton value="Resultado" action="#{comunicacaoTeste3Bean.save()}"/>
 		</h:panelGrid>
 	</o:form>

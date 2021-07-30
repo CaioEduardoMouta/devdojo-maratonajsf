@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -17,6 +18,7 @@ public class ComunicacaoTeste1Bean implements Serializable {
 	private String sobrenome;
 	private Date data = new Date();
 	private String dataString;
+	
 	public void imprimirAtributos() {
 		String initParameter = FacesContext.getCurrentInstance()
 			.getExternalContext()
@@ -24,6 +26,7 @@ public class ComunicacaoTeste1Bean implements Serializable {
 		System.out.println(initParameter);
 	}
 	
+	@PostConstruct
 	public void init() {
 		setDataString(new SimpleDateFormat("dd-MM-yyyy").format(data));
 	}
