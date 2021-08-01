@@ -30,10 +30,8 @@ public class Estudante {
 		this.nota1 = nota1;
 	}
 
-	public static ArrayList<Estudante> estudantList() {
-		return asList(new Estudante("JavaScript", "App", 10),
-				new Estudante("PHP","Sistemas WEB", 10),
-				new Estudante("Java","Sistemas Desktop", 10));
+	public static ArrayList<+> estudantList() {
+		return  Arrays.asList(new Estudante(null, null, 0));
 	}
 	
 	
