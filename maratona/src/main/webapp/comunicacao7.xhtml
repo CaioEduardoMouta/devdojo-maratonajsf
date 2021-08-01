@@ -15,17 +15,10 @@
 	<o:form includeRequestParams="true">
 		<p:messages autoUpdate="true"/>
 		<h:panelGrid columns="1">
-			<h:commandButton actionListener="#{comunicacaoTeste4Bean.execute}">
-				<f:attribute value="#{comunicacaoTeste4Bean.buttonName}" name="value"/>
-			</h:commandButton>
-			
-			<h:commandButton  value="#{comunicacaoTeste4Bean.buttonName}" 
-							  actionListener="#{comunicacaoTeste4Bean.execute}"/>
-							  
-			<h:commandButton test="testando" value="add param" actionListener="#{comunicacaoTeste4Bean.execute}">
-				<f:attribute name="nome" value="DevDojo"/>
-				<f:attribute name="adjetivo" value="Spring Boot"/>
-				<f:attribute name="estudante" value="#{comunicacaoTeste4Bean.estudante}"/>
+			<h:commandButton value="Property Action Liestener" action="#{comunicacaoTeste5Bean.execute()}">
+				<f:setPropertyActionListener value="Caio" target="#{comunicacaoTeste5Bean.nome}"/>
+				<f:setPropertyActionListener value="Carrazedo" target="#{comunicacaoTeste5Bean.sobrenome}"/>
+				<f:setPropertyActionListener value="#{comunicacaoTeste5Bean.estudante}" target="#{comunicacaoTeste5Bean.estudante2}"/>
 			</h:commandButton>
 			
 					
