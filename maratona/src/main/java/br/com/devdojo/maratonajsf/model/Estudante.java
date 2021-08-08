@@ -1,11 +1,10 @@
 package br.com.devdojo.maratonajsf.model;
 
-import java.awt.List;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
+import static java.util.Arrays.asList;
 
 import br.com.devdojo.maratonajsf.model.enums.Turno;
 
@@ -30,8 +29,10 @@ public class Estudante {
 		this.nota1 = nota1;
 	}
 
-	public static ArrayList<+> estudantList() {
-		return  Arrays.asList(new Estudante(null, null, 0));
+	public static java.util.List<Estudante> estudantes() {
+		return new ArrayList<>(asList(new Estudante("Angular","JS",10),			
+				new Estudante("Vue.js","JS",10),
+				new Estudante("React","JS",10)));
 	}
 	
 	

@@ -15,13 +15,14 @@
 	<o:form includeRequestParams="true">
 		<p:messages autoUpdate="true"/>
 		<h:panelGrid columns="1">
-			<h:commandButton value="Property Action Liestener" action="#{comunicacaoTeste5Bean.execute()}">
-				<f:setPropertyActionListener value="Caio" target="#{comunicacaoTeste5Bean.nome}"/>
-				<f:setPropertyActionListener value="Carrazedo" target="#{comunicacaoTeste5Bean.sobrenome}"/>
-				<f:setPropertyActionListener value="#{comunicacaoTeste5Bean.estudante}" target="#{comunicacaoTeste5Bean.estudante2}"/>
-			</h:commandButton>
-			
-					
+			<ui:repeat value="#{comunicacaoTeste6Bean.estudanteList}"
+						var="estudante" varStatus="status">
+				<h:outputText value="#{estudante.nome}"/>&nbsp;
+				<h:outputText value="#{estudante.sobrenome}"/>&nbsp;
+				<h:outputText value="#{estudante.nota1}"/>&nbsp;
+				<h:commandLink value="editar" action="#{comunicacaoTeste6Bean.editar(status.index)}"/>&nbsp;
+				<br/>		
+		 </ui:repeat>	
 		</h:panelGrid>
 	</o:form>
 </h:body>
