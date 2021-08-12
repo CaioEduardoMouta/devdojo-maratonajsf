@@ -17,7 +17,7 @@
 	
 	<o:form includeRequestParams="true">
 		<h:panelGrid columns="2">
-			<ui:repeat var="" value="#{comunicacaoTeste11Bean.estudantes}"  var="estudante">
+			<ui:repeat value="#{comunicacaoTeste11Bean.estudantes}"  var="estudante">
 					<h:outputText value="#{estudanteRegistroBean.nomeSet}"/>
 					<h:commandLink value="editar" action="#{comunicacaoTeste11Bean.editar(estudante)}"/>
 					<br/>
