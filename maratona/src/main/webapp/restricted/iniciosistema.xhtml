@@ -14,6 +14,10 @@
 	<h:body>
 		<h:form>
 			<h1>#{m.userLooged} #{loginBean.estudante.nome} </h1>
+			<h:outputFormat value="#{m.userLogged}">
+				<f:param value="#{loginBean.estudante.nome}"/>
+				<f:param value="#(loginBean.estudante.sobrenome)"/>
+			</h:outputFormat>
 			<h:commandButton value="Logout" action="#{loginBean.logout}"/>
 		</h:form>	
 	</h:body>

@@ -22,11 +22,13 @@ public class LoginBean implements Serializable {
 	private Estudante estudante;
 	private List<Locale> localeList = Arrays.asList(new Locale("en"), new Locale("pt"));
 	private String language;
+	private int qtdeMessagens;
 	
 	public String logar() {
 		
 		if(nome.equals("w") && senha.equals("1")) {
 			estudante = new Estudante();
+			setQtdeMessagens(getQtdeMessagens() + 1);
 			return "/restricted/iniciosistema.xhtml?faces-redirect=true";
 		}
 		FacesContext context = FacesContext.getCurrentInstance();
@@ -79,6 +81,14 @@ public class LoginBean implements Serializable {
 
 	public void setLanguage(String language) {
 		this.language = language;
+	}
+
+	public int getQtdeMessagens() {
+		return qtdeMessagens;
+	}
+
+	public void setQtdeMessagens(int qtdeMessagens) {
+		this.qtdeMessagens = qtdeMessagens;
 	}
 	
 	
