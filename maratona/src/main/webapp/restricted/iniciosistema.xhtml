@@ -8,10 +8,14 @@
 	  xmlns:f="http://java.sun.com/jsf/core" 
 >
 
-<h:body>
-	<h:form>
-		<h1>Usuario logado : #{loginBean.estudante.nome} </h1>
-		<h:commandButton value="Logout" action="#{loginBean.logout}"/>
-	</h:form>	
-</h:body>
+
+<f:view locale="pt">
+	<h:outputText value="#{loginBean.language}"/>
+	<h:body>
+		<h:form>
+			<h1>#{m.userLooged} #{loginBean.estudante.nome} </h1>
+			<h:commandButton value="Logout" action="#{loginBean.logout}"/>
+		</h:form>	
+	</h:body>
+</f:view>
 </html>

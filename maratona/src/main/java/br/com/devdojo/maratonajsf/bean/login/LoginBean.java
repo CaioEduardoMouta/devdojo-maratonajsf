@@ -1,6 +1,9 @@
 package br.com.devdojo.maratonajsf.bean.login;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
@@ -17,6 +20,8 @@ public class LoginBean implements Serializable {
 	private String nome;
 	private String senha;
 	private Estudante estudante;
+	private List<Locale> localeList = Arrays.asList(new Locale("en"), new Locale("pt"));
+	private String language;
 	
 	public String logar() {
 		
@@ -58,6 +63,22 @@ public class LoginBean implements Serializable {
 
 	public void setEstudante(Estudante estudante) {
 		this.estudante = estudante;
+	}
+
+	public List<Locale> getLocaleList() {
+		return localeList;
+	}
+
+	public void setLocaleList(List<Locale> localeList) {
+		this.localeList = localeList;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 	
 	
