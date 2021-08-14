@@ -28,7 +28,7 @@ public class LoginBean implements Serializable {
 		
 		if(nome.equals("w") && senha.equals("1")) {
 			estudante = new Estudante();
-			setQtdeMessagens(getQtdeMessagens() + 1);
+			qtdeMessagens++;
 			return "/restricted/iniciosistema.xhtml?faces-redirect=true";
 		}
 		FacesContext context = FacesContext.getCurrentInstance();

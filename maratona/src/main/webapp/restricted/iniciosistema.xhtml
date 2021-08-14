@@ -18,6 +18,10 @@
 				<f:param value="#{loginBean.estudante.nome}"/>
 				<f:param value="#(loginBean.estudante.sobrenome)"/>
 			</h:outputFormat>
+			<br/>
+			<h:outputFormat value="#{m.alert}">
+				<f:param value="#{loginBean.qtdeMessagens}"/>
+			</h:outputFormat>
 			<h:commandButton value="Logout" action="#{loginBean.logout}"/>
 		</h:form>	
 	</h:body>
