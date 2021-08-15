@@ -1,5 +1,6 @@
 package br.com.devdojo.maratonajsf.bean.converter;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.view.ViewScoped;
@@ -9,7 +10,11 @@ import br.com.devdojo.maratonajsf.model.Estudante;
 
 @Named
 @ViewScoped
-public class ConverterTesteBean {
+public class ConverterTesteBean implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<Estudante> estudantes = Estudante.estudantes();
 	private Estudante estudante;
 	
