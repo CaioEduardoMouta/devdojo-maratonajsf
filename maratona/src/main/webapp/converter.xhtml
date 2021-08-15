@@ -17,14 +17,15 @@
 	<p:messages autoUpdate="true"/>
 	<h:outputText value="Selecione um estudante"/>
 	<h:form>
-		<h:selectOneMenu value="#{converterTesteBean.estudante}">
-			<f:selectItems value="#{converterTesteBean.estudantes}"
-							var="estudante"
-							itemLabel="#{estudante.nome}"
-							itemValue="#{estudante}"/>
-		</h:selectOneMenu>
-		<p:commandButton value="Save" 
-						 actionListener="#{converterTesteBean}" />
+		<h:selectOneMenu value="#{converterTesteBean.estudante}"
+                         converter="estudanteConverter" required="true" requiredMessage="Selecione um estudante">
+            <f:selectItem itemValue="#{null}" itemLabel="Selecione um estudante"/>
+            <f:selectItems value="#{converterTesteBean.estudantes}"
+                           var="estudante" itemLabel="#{estudante.nome}"
+                           itemValue="#{estudante}"/>
+        </h:selectOneMenu>
+        <h:commandButton value="Save"
+                         actionListener="#{converterTesteBean.save}"/>
 	</h:form>
 </h:body>
 </html>

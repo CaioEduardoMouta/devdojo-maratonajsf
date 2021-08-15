@@ -2,14 +2,20 @@ package br.com.devdojo.maratonajsf.model;
 
 
 import java.util.ArrayList;
-
+import java.util.Objects;
 
 import static java.util.Arrays.asList;
 
+import java.io.Serializable;
+
 import br.com.devdojo.maratonajsf.model.enums.Turno;
 
-public class Estudante {
-	
+public class Estudante implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer id;
 	private String nome = "Caio";
 	private String sobrenome = "Mouta";
 	private double nota1;
@@ -24,19 +30,44 @@ public class Estudante {
 	
 	
 	public Estudante(String nome, String sobrenome, double nota1) {
-		super();
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.nota1 = nota1;
+	}
+	
+	public Estudante(Integer id,String nome, String sobrenome, double nota1) {
+		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.nota1 = nota1;
 	}
 
 	public static java.util.List<Estudante> estudantes() {
-		return new ArrayList<>(asList(new Estudante("Angular","JS",10),			
-				new Estudante("Vue.js","JS",10),
-				new Estudante("React","JS",10)));
+		return new ArrayList<>(asList(new Estudante(1,"Angular","JS",10),			
+				new Estudante(2,"Vue.js","JS",10),
+				new Estudante(3,"React","JS",10)));
 	}
 	
 	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Estudante estudante = (Estudante) obj;
+		return Objects.equals(id, estudante.id);
+	}
+
 
 	public String getNome() {
 		return nome;
@@ -83,6 +114,16 @@ public class Estudante {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 }
