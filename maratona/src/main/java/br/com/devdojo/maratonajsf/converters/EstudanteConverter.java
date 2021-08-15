@@ -9,9 +9,7 @@ import javax.faces.convert.FacesConverter;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author William Suane on 5/3/2017.
- */
+
 @FacesConverter(value = "estudanteConverter")
 public class EstudanteConverter implements Converter {
     private List<Estudante> estudantes = Estudante.estudantes();

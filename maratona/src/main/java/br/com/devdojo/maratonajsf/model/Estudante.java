@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import static java.util.Arrays.asList;
 
+import java.util.List;
 import java.io.Serializable;
 
 import br.com.devdojo.maratonajsf.model.enums.Turno;
@@ -42,10 +43,11 @@ public class Estudante implements Serializable {
 		this.nota1 = nota1;
 	}
 
-	public static java.util.List<Estudante> estudantes() {
+	public static List<Estudante> estudantes() {
 		return new ArrayList<>(asList(new Estudante(1,"Angular","JS",10),			
 				new Estudante(2,"Vue.js","JS",10),
-				new Estudante(3,"React","JS",10)));
+				new Estudante(3,"React","JS",10),
+				new Estudante(4,"Laravel","PHP",10)));
 	}
 	
 	

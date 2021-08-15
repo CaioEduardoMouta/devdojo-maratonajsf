@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:of="http://omnifaces.org/functions" 
+	  xmlns:o="http://omnifaces.org/ui"
+>
+<h:head>
+
+</h:head>
+<f:metadata>
+	<f:viewAction action="#{dataTableTesteBean.init}"/>
+</f:metadata>
+
+<h:body>
+	<p:messages autoUpdate="true"/>
+	
+	<h:form>
+		<h:dataTable value="#{dataTableTesteBean.estudantes}" var="estudante">
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{estudante.nome}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Sobrenome</f:facet>
+				<h:outputText value="#{estudante.sobrenome}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">Turno</f:facet>
+				<h:outputText value="#{estudante.turno}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				<h:outputText value="#{estudante.email}"/>
+			</h:column>
+		</h:dataTable>
+		
+		<h:dataTable value="#{dataTableTesteBean.estudanteSet}" var="estudante">
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{estudante.nome}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Sobrenome</f:facet>
+				<h:outputText value="#{estudante.sobrenome}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">Turno</f:facet>
+				<h:outputText value="#{estudante.turno}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				<h:outputText value="#{estudante.email}"/>
+			</h:column>
+		</h:dataTable>  -->
+		
+		<h:dataTable value="#{dataTableTesteBean.estudanteLinkedList}" var="estudante">
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{estudante.nome}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Sobrenome</f:facet>
+				<h:outputText value="#{estudante.sobrenome}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">Turno</f:facet>
+				<h:outputText value="#{estudante.turno}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				<h:outputText value="#{estudante.email}"/>
+			</h:column>
+		</h:dataTable>
+		
+		 <h:dataTable value="#{dataTableTesteBean.mapEstudanteList.values()}" var="estudante">
+			<h:column>
+			<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{estudante.nome}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Sobrenome</f:facet>
+				<h:outputText value="#{estudante.sobrenome}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">Turno</f:facet>
+				<h:outputText value="#{estudante.turno}"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				<h:outputText value="#{estudante.email}"/>
+			</h:column>
+		</h:dataTable>  
+		
+		 <h:dataTable value="#{dataTableTesteBean.mapEstudanteList.keySet()}" var="string">
+			<h:column>
+				<f:facet name="header">Chave</f:facet>
+				<h:outputText value="#{string}"/>
+			</h:column>
+			
+		</h:dataTable>  
+	
+	
+	</h:form>
+</h:body>
+</html>
