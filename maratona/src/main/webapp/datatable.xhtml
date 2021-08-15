@@ -22,11 +22,25 @@
 	<h:form>
 		<h:dataTable value="#{dataTableTesteBean.estudantes}" var="estudante">
 			<h:column>
-				<f:facet name="header">Nome</f:facet>
+				<f:facet name="header">
+				<h:commandLink actionListener="#{dataTableTesteBean.orderByNome('asc')}">
+					Nome asc			
+				</h:commandLink>
+				<h:commandLink actionListener="#{dataTableTesteBean.orderByNome('desc')}">
+					Nome desc			
+				</h:commandLink>
+				</f:facet>
 				<h:outputText value="#{estudante.nome}"/>
 			</h:column>
 			<h:column>
-				<f:facet name="header">Sobrenome</f:facet>
+				<f:facet name="header">
+				<h:commandLink actionListener="#{dataTableTesteBean.orderBySobrenome('asc')}">
+					Sobrenome asc			
+				</h:commandLink>
+				<h:commandLink actionListener="#{dataTableTesteBean.orderBySobrenome('desc')}">
+					Sobrenome desc			
+				</h:commandLink>
+				</f:facet>
 				<h:outputText value="#{estudante.sobrenome}"/>
 			</h:column>
 				<h:column>
@@ -36,6 +50,13 @@
 				<h:column>
 				<f:facet name="header">E-mail</f:facet>
 				<h:outputText value="#{estudante.email}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header"> </f:facet>
+				<h:commandLink actionListener="#{dataTableTesteBean.remove(estudante)}"
+								rendered="#{not estudante.editing}">
+							<h:outputText value="Remover"/>
+				</h:commandLink>
 			</h:column>
 		</h:dataTable>
 		

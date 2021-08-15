@@ -2,6 +2,7 @@ package br.com.devdojo.maratonajsf.bean.datatable;
 
 import br.com.devdojo.maratonajsf.model.Estudante;
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -31,6 +32,24 @@ public class DataTableTesteBean implements Serializable {
 		mapEstudanteList.put("Framework&Biblioteca3", new Estudante(3,"React","JS",10));
 		mapEstudanteList.put("Framework&Biblioteca4", new Estudante(4,"Laravel","PHP",10));
 		
+	}
+	
+	public void orderByNome(String ordem) {
+		if(ordem.equals("asc"))
+			estudantes.sort(Comparator.comparing(Estudante::getNome));
+		else 
+			estudantes.sort(Comparator.comparing(Estudante::getNome).reversed());
+	}
+	
+	public void orderBySobrenome(String ordem) {
+		if(ordem.equals("asc"))
+			estudantes.sort(Comparator.comparing(Estudante::getSobrenome));
+		else 
+			estudantes.sort(Comparator.comparing(Estudante::getSobrenome).reversed());
+	}
+	
+	public void remove(Estudante estudante) {
+		estudantes.remove(estudante);
 	}
 	
 	

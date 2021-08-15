@@ -4,6 +4,8 @@ package br.com.devdojo.maratonajsf.model;
 import java.util.ArrayList;
 import java.util.Objects;
 
+
+
 import static java.util.Arrays.asList;
 
 import java.util.List;
@@ -25,6 +27,7 @@ public class Estudante implements Serializable {
 	private Turno turno = Turno.MATUTINO;
 	private String email;
 	
+	private transient boolean editing;
 	public Estudante() {
 		
 	}
@@ -126,6 +129,16 @@ public class Estudante implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+
+	public boolean isEditing() {
+		return editing;
+	}
+
+
+	public void setEditing(boolean editing) {
+		this.editing = editing;
 	}
 	
 }
