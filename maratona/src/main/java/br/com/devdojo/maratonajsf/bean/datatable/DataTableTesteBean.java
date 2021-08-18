@@ -52,6 +52,20 @@ public class DataTableTesteBean implements Serializable {
 		estudantes.remove(estudante);
 	}
 	
+	public void edit(Estudante estudante) {
+		estudante.setEditing(true);
+	}
+	
+	public void save() {
+		estudantes.forEach(estudante -> {
+			if(estudante.isEditing())
+			System.out.println(estudante);	
+			estudante.setEditing(false);
+		});
+				
+	}
+	
+
 	
 	public Map<String, Estudante> getMapEstudanteList() {
 		return mapEstudanteList;

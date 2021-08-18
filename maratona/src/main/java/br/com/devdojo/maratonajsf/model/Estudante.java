@@ -54,6 +54,13 @@ public class Estudante implements Serializable {
 	}
 	
 	
+	
+
+	@Override
+	public String toString() {
+		return "Estudante [nome=" + nome + ", sobrenome=" + sobrenome + ", turno=" + turno + ", email=" + email + "]";
+	}
+
 
 	@Override
 	public int hashCode() {
