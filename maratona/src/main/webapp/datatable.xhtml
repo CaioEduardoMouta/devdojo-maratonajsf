@@ -17,8 +17,11 @@
 </f:metadata>
 
 <h:body>
-	<p:messages autoUpdate="true"/>
 	
+	<p:messages autoUpdate="true"/>
+	<p:importEnum type="br.com.devdojo.maratonajsf.model.enums.Turno" 
+				  var="Turno"
+                  allSuffix="ALL_ENUM_VALUES"/>
 	<h:form>
 		<h:dataTable value="#{dataTableTesteBean.estudantes}" var="estudante">
 			<h:column>
@@ -44,15 +47,20 @@
 				</f:facet>
 				<h:outputText value="#{estudante.sobrenome}" rendered="#{not estudante.editing}" />
 				<h:inputText value="#{estudante.sobrenome}" rendered="#{estudante.editing}" />
-
 			</h:column>
 				<h:column>
 				<f:facet name="header">Turno</f:facet>
-				<h:outputText value="#{estudante.turno}"/>
+				<h:outputText value="#{estudante.turno}" rendered="#{not estudante.editing}" />
+				<h:selectOneMenu value="#{estudante.turno}" rendered="#{estudante.editing}">
+					<f:selectItems value="#{Turno.ALL_ENUM_VALUES}" 
+								   var="turno" 
+								   itemValue="#{turno}" itemLabel="#{turno}"/>
+				</h:selectOneMenu>
 			</h:column>
-				<h:column>
+			<h:column>
 				<f:facet name="header">E-mail</f:facet>
-				<h:outputText value="#{estudante.email}"/>
+				<h:outputText value="#{estudante.email}" rendered="#{not estudante.editing}" />
+				<h:inputText value="#{estudante.email}" rendered="#{estudante.editing}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header"> </f:facet>
