@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+//import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -24,11 +25,17 @@ public class AjaxTesteBean implements Serializable{
 	private List<String> personagens;
 	private String animeSelecionado;
 	private String personagemSelecionado;
-	{
+	
+	
+	public void init() {
+//		if(FacesContext.getCurrentInstance().isPostback()) {
+		System.out.println("entrou");
 		animePersonagensMap = new TreeMap<>();
 		animePersonagensMap.put("Senhor dos Anéis", asList("Gandalf","Gollum", "Frodo"));
 		animePersonagensMap.put("Corrida", asList("Need For Speed","Formula 1", "Gran Turismo"));
 		animePersonagensMap.put("Atletas", asList("Michael Phelps","Lebron James", "Mineirinho"));
+	
+//		}
 	}
 	
 	public void toUpperCase(AjaxBehaviorEvent e) {
