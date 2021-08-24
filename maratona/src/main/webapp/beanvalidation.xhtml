@@ -14,8 +14,11 @@
 	
 	<h:form id="form">
 		<h:panelGrid columns="1">
-			<h:inputText value="#{beanValidationTesteBean.nome}" required="true"/>
-			<h:commandButton value="Enviar"/>
+			<h:inputText value="#{beanValidationTesteBean.nome}" />
+			<h:inputText value="#{beanValidationTesteBean.email}" />
+			<h:inputText value="#{beanValidationTesteBean.decimal}" />
+			<h:inputText value="#{beanValidationTesteBean.numero}" />
+			<h:commandButton value="Enviar" actionListener="#{beanValidationTesteBean.salvar}"/>
 		</h:panelGrid>
 	</h:form>
 	
