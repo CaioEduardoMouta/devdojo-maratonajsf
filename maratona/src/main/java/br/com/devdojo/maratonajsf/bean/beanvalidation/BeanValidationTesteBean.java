@@ -22,7 +22,7 @@ public class BeanValidationTesteBean implements Serializable{
 	@Size(min = 3, max = 10, message = "O nome tem que ter entre 3 e 10 caracteres")
 	@NotNull(message = "O nome é obrigario")
 	private String nome;
-	@Pattern(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\\\.[a-zA-Z0-9-.]+$",
+	@Pattern(regexp = "^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?$/i^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?$/i",
 			message = "Digite um email valido" )
 	private String email;
 	@DecimalMax(value = "30.00", message = "Não pode ser maior que 30")
