@@ -9,15 +9,18 @@
 	  xmlns:f="http://java.sun.com/jsf/core" 
 >
 <h:head>
+	<h:outputStylesheet library="default" name="css/style.css"/>
+	<h:outputScript library="default" name="js/main.js"/>
 	
 </h:head>
 <h:body>
 	
 	<h:form id="form">
 		<h:panelGrid columns="1">
-			
 			<h:inputText value="#{viewExpiredTesteBean.nome}"/>
-			<h:commandButton  src="resources/css/style.css" value="Save" action="#{viewExpiredTesteBean.save}"/>	
+			
+			<h:commandButton value="Save" action="#{viewExpiredTesteBean.save}" styleClass="btn"/>	
+			<h:graphicImage library="default" name="Images/setup.jfif"/>
 			<h:commandButton value="Invalidar sessão" action="#{viewExpiredTesteBean.invalidateSession}"/>	
 		</h:panelGrid>
 	</h:form>
