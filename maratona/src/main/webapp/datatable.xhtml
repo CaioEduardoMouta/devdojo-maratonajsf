@@ -5,6 +5,7 @@
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	  xmlns:dc="http://devdojo.com.br/components"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  xmlns:of="http://omnifaces.org/functions" 
 	  xmlns:o="http://omnifaces.org/ui"
@@ -67,6 +68,7 @@
 				<h:commandLink actionListener="#{dataTableTesteBean.remove(estudante)}"
 								rendered="#{not estudante.editing}">
 							<h:outputText value="Remover"/>
+							<dc:confirmDelete/>
 				</h:commandLink>
 			</h:column>
 			<h:column>
